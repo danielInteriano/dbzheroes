@@ -1,0 +1,23 @@
+<h4>Listado de Personajes de DBZ</h4>
+<ul class="list-group-item">
+  <li
+    *ngFor="
+      let personaje of listadoPersonajes;
+      let i = index;
+      let isFirst = first;
+      let isLast = last
+    "
+    class="list-group-item d-flex justify-content-between align-items-center mb-1"
+    [ngClass]="{ 'text-bg-warning': isFirst, 'text-bg-secondary': isLast }"
+  >
+    <div>
+      <span class="text-primary">{{ i + 1 }}.</span>
+      {{ personaje.name }} -
+      <span><b>Poder:</b> {{ personaje.poder | number }}</span>
+    </div>
+
+    <button (click)="onDeletePersonaje(personaje.id)" class="btn btn-danger">
+      X
+    </button>
+  </li>
+</ul>

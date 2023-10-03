@@ -1,0 +1,13 @@
+<h2>Personajes de DBZ</h2>
+<hr />
+<div class="row">
+  <div class="col-8">
+    <app-listado
+      [listadoPersonajes]="personajes"
+      (onDelete)="onDeletePersonaje($event)"
+    ></app-listado>
+  </div>
+  <div class="col-4">
+    <app-formulario (onNewPersonaje)="onNewPersonaje($event)"></app-formulario>
+  </div>
+</div>
